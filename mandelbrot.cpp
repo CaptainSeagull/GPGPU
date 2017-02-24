@@ -31,18 +31,17 @@ thread_proc(LPVOID param) {
     int thread_cnt = mandelbrot_data->thread_cnt;
     double scale = mandelbrot_data->scale;
     rgb_t **row_ptrs = mandelbrot_data->row_ptrs;
+    double cx = -.6, cy = 0;
 
     for(i = mandelbrot_data->start; (i < height); i += thread_cnt) {
+        double y = (i - height / 2) * scale + cy;
+        rgb_t *px = row_ptrs[i];
         for(j = 0; (j < width); ++j) {
-            double cx = -.6, cy = 0;
-            double y = (i - height / 2) * scale + cy;
-
-            rgb_t *px = row_ptrs[i];
-            px += j;
-
             double x = (j - width / 2) * scale + cx;
             double zx, zy, zx2, zy2;
             uint8_t iter = 0;
+
+            px += j;
 
             zx = hypot(x - .25, y);
             if(x < zx - 2 * zx * zx + .25)         iter = 0xFF;
@@ -54,13 +53,13 @@ thread_proc(LPVOID param) {
                 zx = zx2 - zy2 + x;
                 zx2 = zx * zx;
                 zy2 = zy * zy;
-            } while ((iter++ < 0xFF) && (zx2 + zy2 < 4));
+            } while((iter++ < 0xFF) && (zx2 + zy2 < 4));
 
             px->r = iter;
             px->g = iter;
             px->b = iter;
 
-            // TODO(Jonny): Is there a way I could add 0x000000 to the mapping so I avoid the if statement?
+            // TODO(Jonny): Is there a way I could add 0x000000 to the mapping to I avoid the if statement?
             if(px->r == 0xFF || px->r == 0) {
                 px->r = 0; px->g = 0; px->b = 0;
             } else {
