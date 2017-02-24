@@ -1,0 +1,14 @@
+cuda timers.
+	17
+	18
+	18
+
+cpu timers.
+	301
+	321
+	288
+
+Threaded cpu
+	121
+	85
+	115

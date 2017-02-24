@@ -1,0 +1,33 @@
+﻿Build started 24/02/2017 15:08:19.
+     1>Project "C:\Users\B00236297\Desktop\mandelbrot\mandelbrot\mandelbrot.vcxproj" on node 2 (Build target(s)).
+     1>AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /DNDEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I. /FIcuda_runtime.h /c C:\Users\B00236297\Desktop\mandelbrot\mandelbrot\mandelbrot.cu 
+     1>Project "C:\Users\B00236297\Desktop\mandelbrot\mandelbrot\mandelbrot.vcxproj" (1) is building "C:\Users\B00236297\Desktop\mandelbrot\mandelbrot\mandelbrot.vcxproj" (1:2) on node 2 (CudaBuildCore target(s)).
+     1>CudaBuildCore:
+         Compiling CUDA source file mandelbrot.cu...
+         cmd.exe /C "c:\temp\tmp50e6de14b6f446b1853bc6c1d2f50da9.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2015 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"     --keep-dir Release -maxrregcount=0  --machine 32 --compile -cudart static     -DWIN32 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o Release\mandelbrot.cu.obj "C:\Users\B00236297\Desktop\mandelbrot\mandelbrot\mandelbrot.cu"
+         
+         C:\Users\B00236297\Desktop\mandelbrot\mandelbrot>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2015 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"     --keep-dir Release -maxrregcount=0  --machine 32 --compile -cudart static     -DWIN32 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o Release\mandelbrot.cu.obj "C:\Users\B00236297\Desktop\mandelbrot\mandelbrot\mandelbrot.cu" 
+     1>C:/Users/B00236297/Desktop/mandelbrot/mandelbrot/mandelbrot.cu(79): warning : variable "err" was set but never used
+     1>C:/Users/B00236297/Desktop/mandelbrot/mandelbrot/mandelbrot.cu(79): warning : variable "err" was set but never used
+     1>CUDACOMPILE : nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+         mandelbrot.cu
+     1>Done Building Project "C:\Users\B00236297\Desktop\mandelbrot\mandelbrot\mandelbrot.vcxproj" (CudaBuildCore target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\B00236297\Desktop\mandelbrot\Release\mandelbrot_gpu.exe" /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\Win32" cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\B00236297\Desktop\mandelbrot\Release\mandelbrot_gpu.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\B00236297\Desktop\mandelbrot\Release\mandelbrot_gpu.lib" /MACHINE:X86 /SAFESEH Release\mandelbrot.cu.obj
+         LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+         mandelbrot.vcxproj -> C:\Users\B00236297\Desktop\mandelbrot\Release\mandelbrot_gpu.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\cudart*.dll" "C:\Users\B00236297\Desktop\mandelbrot\Release\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\cudart*.dll" "C:\Users\B00236297\Desktop\mandelbrot\Release\"
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\cudart*.dll" "C:\Users\B00236297\Desktop\mandelbrot\Release\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\cudart32_80.dll
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\cudart64_80.dll
+                 2 file(s) copied.
+     1>Done Building Project "C:\Users\B00236297\Desktop\mandelbrot\mandelbrot\mandelbrot.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.45
